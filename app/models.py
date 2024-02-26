@@ -1,9 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.core.validators import MaxValueValidator, MinValueValidator
+# from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
-
 
 
 STATE_CHOICES = (
@@ -11,10 +10,10 @@ STATE_CHOICES = (
     ('Assam', 'Assam'),
     ('Gujarat', 'Gujarat'),
     ('Bihar', 'Bihar'),
-    ('Manipur','Manipur'),
-    ('Kerala','Kerala'),
-    ('Daman and Diu','Daman and Diu'),
-    ('Kashmir','Kashmir')
+    ('Manipur', 'Manipur'),
+    ('Kerala', 'Kerala'),
+    ('Daman and Diu', 'Daman and Diu'),
+    ('Kashmir', 'Kashmir')
 
 )
 
@@ -62,8 +61,8 @@ STATUS_CHOICES = (
 )
 
 
-class orderplaced(models.Model):
-    user =models.ForeignKey(User, on_delete=models.CASCADE)
+class OrderPlaced(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
